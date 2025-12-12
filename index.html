@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CourseFinder - Dashboard</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+  <!-- TOP BLUE BAR (full width like screenshot) -->
+  <header class="top-header d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <div class="brand-left d-flex align-items-center gap-3">
+          <div class="brand-title">coursefinder.ai</div>
+        </div>
+
+        <div class="search-bar d-none d-md-block">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+            <input class="form-control form-control-sm" placeholder="Search by student name, ack no." />
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="#" class="whats-new-link">
+            <i class="bi bi-megaphone icon-mega"></i>
+            <span class="whats-new-text">Whats New?</span>
+        </a>
+
+<div class="notification-wrapper">
+        <div class="notification-box">
+            <i class="bi bi-bell-fill text-white fs-5"></i>
+            <span class="notification-badge">2</span>
+        </div>
+    </div>
+
+        <div class="d-flex align-items-center gap-2 profile-mini">
+          <img src="assets/adminImg.jpg" alt="avatar" />
+          <div class="text-white small">
+            <div class="fw-bold">Diksha Goel</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container-fluid app-wrap">
+    <div class="app">
+
+      <!-- LEFT SIDEBAR -->
+      <aside class="sidebar">
+        <div class="sidebar-inner">
+          <div class="brand mb-3">
+          </div>
+
+          <nav class="nav flex-column">
+<a class="nav-link active custom-nav" href="#">
+  <i class="bi bi-house-door-fill"></i> Dashboard
+</a>
+            <a class="nav-link" href="#"><i class="bi bi-file-earmark-text me-2"></i> Applications</a>
+            <a class="nav-link" href="#"><i class="bi bi-search me-2"></i> Search Courses</a>
+            <a class="nav-link" href="#"><i class="bi bi-wallet2 me-2"></i> Wallet</a>
+            <a class="nav-link" href="#"><i class="bi bi-cash-stack me-2"></i> Commission Payments</a>
+
+            <hr>
+
+            <a class="nav-link" href="#"><i class="bi bi-box2-heart me-2"></i> Allied Services</a>
+            <a class="nav-link" href="#"><i class="bi bi-book me-2"></i> Learning Resources</a>
+            <a class="nav-link" href="#"><i class="bi bi-link-45deg me-2"></i> Quick Links</a>
+
+            <button class="btn btn-outline-secondary btn-sm w-100 mt-3"><i class="bi bi-chat-dots me-1"></i> Submit feedback</button>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- MAIN (Center) -->
+      <main class="main">
+
+        <!-- Greeting row (under top header) -->
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <h4 class="m-0">Hey, Good Morning <strong>Diksha!</strong></h4>
+        </div>
+
+        <!-- Filters card -->
+        <div class="card card-filter mb-3">
+          <div class="card-body">
+
+            
+<div class="filter-card">
+    <div class="row g-3">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <select class="form-select custom-select-icon">
+                    <option selected>Year</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <select class="form-select custom-select-icon">
+                    <option selected>Date Created</option>
+                    <option value="today">Today</option>
+                    <option value="last-week">Last Week</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar-check"></i></span>
+                <select class="form-select custom-select-icon">
+                    <option selected>Select intake</option>
+                    <option value="fall">Fall 2026</option>
+                    <option value="spring">Spring 2026</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row g-3 mt-3 align-items-end">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-building"></i></span>
+                <select class="form-select custom-select-icon">
+                    <option selected>Countries</option>
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                </select>
+            </div>
+        </div>
+        
+<div class="col-md-4 d-flex align-items-center">
+            <button class="btn btn-primary apply-filters-btn">Apply Filters</button>
+        </div>
+    </div>
+</div>
+
+            <!-- stats blocks -->
+<div class="stats mt-3">
+  
+  <div class="stat stat-blue">
+    <div class="stat-content">
+      <div class="num">18</div>
+      <div class="muted">Conditional</div>
+    </div>
+    <button class="btn-stat">Offer letter</button>
+  </div>
+
+  <div class="stat stat-green">
+    <div class="stat-content">
+      <div class="num">22</div>
+      <div class="muted">Un-Conditional</div>
+    </div>
+    <button class="btn-stat">Offer letter</button>
+  </div>
+
+  <div class="stat stat-yellow">
+    <div class="stat-content">
+      <div class="num">30</div>
+      <div class="muted">Payment Received</div>
+    </div>
+    <button class="btn-stat">All Country</button>
+  </div>
+
+  <div class="stat stat-red">
+    <div class="stat-content">
+      <div class="num">8</div>
+      <div class="muted">Payment Received</div>
+    </div>
+    <button class="btn-stat">Offer letter</button>
+  </div>
+
+  <div class="stat stat-grey">
+    <div class="stat-content">
+      <div class="num">8</div>
+      <div class="muted">VISA Received</div>
+    </div>
+    <button class="btn-stat">Offer letter</button>
+  </div>
+
+</div>
+
+        <!-- Applications table card -->
+<div class="applications-card card mb-3">
+    
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <strong>Applications</strong>
+        <i class="bi bi-arrows-fullscreen fullscreen-icon"></i> 
+    </div>
+
+    <div class="card-tabs d-flex border-bottom">
+        <a href="#" class="tab-item active">Pending On Me (15)</a>
+        <a href="#" class="tab-item">Lorem Ipsum (12)</a>
+        <a href="#" class="tab-item">Lorem Ipsum (18)</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover mb-0 align-middle applications-table">
+            <thead class="table-light">
+                <tr>
+                    <th class="sortable">Ack. no. <i class="bi bi-arrow-down-up"></i></th>
+                    <th class="sortable">Student name <i class="bi bi-arrow-down-up"></i></th>
+                    <th class="sortable">University <i class="bi bi-arrow-down-up"></i></th>
+                    <th class="sortable">Program <i class="bi bi-arrow-down-up"></i></th>
+                    <th class="sortable">Pending Since <i class="bi bi-arrow-down-up"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="#" class="text-decoration-none">11710/22-23</a></td>
+                    <td>
+                        <div class="fw-bold">Rishi Joshi</div>
+                        <div class="small text-muted">rishijoshi@gmail.com</div>
+                    </td>
+                    <td>Sheffield Hallam...</td>
+                    <td>Msc Internation...</td>
+                    <td>
+                        <div>1 Day</div>
+                        <div class="small text-muted">12 Dec 2022</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="text-decoration-none">11710/22-23</a></td>
+                    <td>
+                        <div class="fw-bold">Viren Shah</div>
+                        <div class="small text-muted">virensha24@gmail.com</div>
+                    </td>
+                    <td>Sheffield Hallam...</td>
+                    <td>Msc Internation...</td>
+                    <td>
+                        <div>1 Day</div>
+                        <div class="small text-muted">12 Dec 2022</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="text-decoration-none">11710/22-23</a></td>
+                    <td>
+                        <div class="fw-bold">Tushar Joshi</div>
+                        <div class="small text-muted">rishijoshi@gmail.com</div>
+                    </td>
+                    <td>Sheffield Hallam...</td>
+                    <td>Msc Internation...</td>
+                    <td>
+                        <div>1 Day</div>
+                        <div class="small text-muted">12 Dec 2022</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a href="#" class="text-decoration-none">11710/22-23</a></td>
+                    <td>
+                        <div class="fw-bold">Rishi Joshi</div>
+                        <div class="small text-muted">rishijoshi@gmail.com</div>
+                    </td>
+                    <td>Sheffield Hallam...</td>
+                    <td>Msc Internation...</td>
+                    <td>
+                        <div>1 Day</div>
+                        <div class="small text-muted">12 Dec 2022</div>
+                    </td>
+                </tr>
+                 <tr>
+                    <td><a href="#" class="text-decoration-none">11710/22-23</a></td>
+                    <td>
+                        <div class="fw-bold">Rishi Joshi</div>
+                        <div class="small text-muted">rishijoshi@gmail.com</div>
+                    </td>
+                    <td>Sheffield Hallam...</td>
+                    <td>Msc Internation...</td>
+                    <td>
+                        <div>1 Day</div>
+                        <div class="small text-muted">12 Dec 2022</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card-footer d-flex justify-content-end align-items-center">
+        <nav aria-label="Application Pagination">
+            <ul class="pagination pagination-sm mb-0 custom-pagination">
+                <li class="page-item disabled"><a class="page-link" href="#"><i class="bi bi-chevron-left"></i></a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#"><i class="bi bi-chevron-right"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+        <!-- Large blue promo banner -->
+<div class="card promo-banner-loans mb-5">
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <div class="bannerLoan">
+      <div class="banner-service-text">Allied Services</div>
+      <h3 class="banner-title">Overseas Education Loans</h3>
+      <p class="banner-description mb-4">Provide end to end overseas education loan assistance to your students to help them achieve their goal</p>
+      <button class="btn btn-light banner-cta">Get Started</button>
+    </div>
+
+    <div class="banner-figure-container d-none d-md-block text-end">
+      <img src="assets/FigmaPic.png" alt="student" class="banner-figure-img" />
+      </div>
+  </div>
+    <div class="pagination-dots banner-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+      </main>
+
+      <!-- RIGHT COLUMN -->
+      <aside class="right-col">
+                  <div class="d-flex gap-2">
+            <button class="btn btn-outline-secondary btn-sm btn-sm2">Refresh Dashboard</button>
+            <button class="btn btn-primary btn-sm btn-sm2">Register Student</button>
+          </div>
+        <div class="card news p-3 mb-3 cardNews">
+<div class="news-card">
+    
+    <div class="card-header-flex">
+        
+        <div class="d-flex justify-content-between align-items-center w-100">
+            <strong>News Bulletin</strong>
+            
+            <i class="bi bi-three-dots three-dots-icon"></i>
+        </div>
+    </div>
+    
+    <div class="news-item-body">
+        
+        <div class="news-icon-wrapper">
+            <i class="bi bi-file-earmark-text"></i>
+        </div>
+        
+        <div class="news-text-content">
+            <h5 class="news-headline">Indian student tops Harvard!</h5>
+            
+            <p class="news-excerpt">
+               Indian student tops Harvard university and makes history! It's the first time for an Indian student to do this. 
+                <a href="#" class="read-more-link">Read More</a>
+            </p>
+        </div>
+    </div>
+    
+    <div class="pagination-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</div>
+
+<div class="card event-card p-3 mb-3">
+            
+            <div class="d-flex justify-content-between align-items-center mb-3 event-header">
+                <strong class="fs-6">Upcoming Events</strong>
+                <div class="d-flex gap-2 event-nav">
+                    <button class="btn btn-sm btn-light event-nav-btn disabled"><i class="bi bi-chevron-left"></i></button>
+                    <button class="btn btn-sm btn-light event-nav-btn"><i class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <img src="assets/BannerImg.png" class="img-fluid rounded-8 mb-3 event-img" alt="Graduation Event" />
+            
+            <div class="event-details-content">
+                
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <div>
+                        <h5 class="event-title mb-0">Event Name Goes here</h5>
+                        <div class="event-date">7 Jan 2023</div>
+                    </div>
+                    <div class="event-time-box">
+                        4:30<div class="small fw-bold">PM</div>
+                    </div>
+                </div>
+
+                <div class="event-info-row mb-1">
+                    <i class="bi bi-building me-2"></i>
+                    <span>University of New York</span>
+                </div>
+                <div class="event-info-row mb-3">
+                    <i class="bi bi-person me-2"></i>
+                    <span>By Kishori Gupta</span>
+                </div>
+            </div>
+
+            <button class="btn btn-primary w-100 event-register-btn">Register Now</button>
+        </div>
+
+<div class="card quicklinks-card p-3 mb-3">
+          <strong class="quicklinks-title">Quick Links</strong>
+          
+          <div class="quick-link-items mt-3">
+            
+            <a href="#" class="quick-link-item">
+              <span>Learning Resources</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            
+            <a href="#" class="quick-link-item">
+              <span>Learning Resources</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            
+            <a href="#" class="quick-link-item">
+              <span>Learning Resources</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+
+            <a href="#" class="quick-link-item">
+              <span>Learning Resources</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+
+            <a href="#" class="quick-link-item">
+              <span>Learning Resources</span>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            
+          </div>
+        </div>
+
+<div class="card contact-manager-card p-3">
+          <strong class="contact-title">Contact Regional Manager</strong>
+          
+          <div class="contact-list mt-3">
+            
+            <div class="contact-item-box">
+              <div class="d-flex gap-3 align-items-center mb-2">
+                <img src="assets/contactImg.png" alt="avatar" class="rounded-circle contact-avatar" />
+                <div>
+                  <div class="contact-name">Santosh Sharma</div>
+                  <div class="contact-info-row">+91 9876543210 <span class="divider">|</span> Hyderabad</div>
+                </div>
+              </div>
+              <div class="contact-email">sshatmal123@kcoverseas.com</div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="d-flex gap-3 align-items-center mb-2">
+                <img src="assets/contactImg.png" alt="avatar" class="rounded-circle contact-avatar" />
+                <div>
+                  <div class="contact-name">Santosh Sharma</div>
+                  <div class="contact-info-row">+91 9876543210 <span class="divider">|</span> Hyderabad</div>
+                </div>
+              </div>
+              <div class="contact-email">sshatmal123@kcoverseas.com</div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="d-flex gap-3 align-items-center">
+                <img src="assets/contactImg.png" alt="avatar" class="rounded-circle contact-avatar" />
+                <div>
+                  <div class="contact-name">Santosh Sharma</div>
+                  <div class="contact-info-row">+91 9876543210 <span class="divider">|</span> Hyderabad</div>
+                </div>
+              </div>
+              <div class="contact-email">sshatmal123@kcoverseas.com</div>
+            </div>
+
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="assets/script.js"></script>
+</body>
+</html>

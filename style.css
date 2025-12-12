@@ -1,0 +1,968 @@
+:root{
+  --brand-blue: #1f6fff;    /* adjusted to match screenshot blue */
+  --header-blue: #2070ff;
+  --soft-bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --muted: #8b95a6;
+  --shadow: 0 8px 28px rgba(18,34,84,0.06);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%; margin:0; font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color:#253046; background:var(--soft-bg);}
+
+/* Top header - full width */
+.top-header{
+  background: linear-gradient(90deg,var(--header-blue), #1057d6);
+  padding:12px 0;
+  color:#fff;
+}
+
+/* overall app grid */
+.app-wrap{ padding: 18px 20px; }
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 24px;
+  align-items:start;
+}
+
+/* Sidebar */
+.sidebar { background:var(--card-bg); border-radius:12px; padding:18px; box-shadow:var(--shadow); height: calc(100vh - 120px); overflow:auto; }
+.sidebar .logo{ width:42px;height:42px;border-radius:8px;background:linear-gradient(135deg,#2f7bff,#1ea3ff); display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;margin-bottom:8px;}
+.nav-link { color:#344055; padding:9px 10px; border-radius:8px; margin-bottom:6px; display:flex; align-items:center; font-size:14px; }
+.nav-link i { font-size:16px; }
+.nav-link.active { background: linear-gradient(180deg, rgba(47,123,255,0.08), rgba(47,123,255,0.03)); color:var(--brand-blue); font-weight:600; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); }
+
+/* main column 
+.main {}
+*/
+
+/* greeting row */
+h4 { font-size:20px; }
+
+/* filter card */
+.card-filter{ border-radius:12px; box-shadow:var(--shadow); border:0; }
+.card-filter .form-select, .card-filter .form-control { border-radius:8px; }
+
+/* Container Layout */
+.stats {
+    display: flex;
+    gap: 20px; /* Increased gap slightly to match design */
+    margin-top: 14px;
+    width: 100%;
+}
+
+/* Base Card Styling */
+.stat {
+    flex: 1;
+    border-radius: 12px;
+    padding: 20px 10px 15px 10px; /* Top padding larger, bottom padding for button */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; /* Centers items horizontally */
+    text-align: center;
+    min-height: 140px; /* Taller to accommodate vertical stack */
+    transition: transform 0.2s ease;
+}
+
+.stat:hover {
+    transform: translateY(-2px);
+}
+
+.stat-content {
+    margin-bottom: 15px;
+}
+
+/* Typography */
+.stat .num {
+    font-weight: 600;
+    font-size: 32px; /* Much larger font size as per design */
+    line-height: 1.2;
+    margin-bottom: 5px;
+}
+
+.stat .muted {
+    color: #444; /* Darker grey than default bootstrap muted */
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Base Button Styling */
+.btn-stat {
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+/* --- THEMES (Backgrounds & Text Colors) --- */
+
+/* Blue Theme */
+.stat-blue { background-color: #daeaff; margin-bottom: 20px; }
+.stat-blue .num { color: #2e7af1; }
+.stat-blue .btn-stat { color: #2e7af1; border-color: #b5d0ff; }
+
+/* Green Theme */
+.stat-green { background-color: #eafff0; margin-bottom: 20px;}
+.stat-green .num { color: #3ab564; }
+.stat-green .btn-stat { color: #3ab564; border-color: #bcebc9; }
+
+/* Yellow/Orange Theme */
+.stat-yellow { background-color: #fff7d6; margin-bottom: 20px;}
+.stat-yellow .num { color: #eab308; } /* Golden yellow */
+.stat-yellow .btn-stat { color: #b88f12; border-color: #ebd793; }
+
+/* Red/Pink Theme */
+.stat-red { background-color: #ffebee; margin-bottom: 20px;}
+.stat-red .num { color: #f23d5b; }
+.stat-red .btn-stat { color: #f23d5b; border-color: #ffcbd4; }
+
+/* Grey Theme */
+.stat-grey { background-color: #f2f2f2; margin-bottom: 20px; }
+.stat-grey .num { color: #555555; }
+.stat-grey .btn-stat { color: #555555; border-color: #d1d1d1; }
+
+/* --- BASE CARD STYLES --- */
+.applications-card { 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow like the design */
+    border: 1px solid #eef3f8; /* Light border */
+    overflow: hidden; 
+}
+
+/* Card Header (Title and Fullscreen Icon) */
+.applications-card .card-header { 
+    background-color: white; /* Ensure background is white */
+    border-bottom: none; /* Removed the default border here */
+    padding: 16px 20px 0 20px; /* Padding for the main title */
+}
+
+.applications-card .card-header strong {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.fullscreen-icon {
+    font-size: 1.1rem;
+    color: #6d7885;
+    cursor: pointer;
+}
+
+
+/* --- TABLE STYLES --- */
+.table-responsive {
+    border-radius: 0 0 12px 12px; /* Ensure table doesn't break card border radius */
+}
+
+.applications-table {
+    --bs-table-hover-bg: #f9f9f9; /* Define a light hover color */
+}
+
+.table thead th { 
+    /* The design has a clean, uniform look for headers */
+    border-bottom: 1px solid #eef3f8; 
+    color: #6d7885; 
+    font-weight: 600; 
+    font-size: 13px; 
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.table tbody td { 
+    vertical-align: middle; 
+    font-size: 14px; 
+    color: #223;
+    padding: 12px 15px; /* Consistent padding */
+}
+
+.applications-table .sortable {
+    cursor: pointer;
+}
+
+.applications-table .sortable i {
+    font-size: 0.8em;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+
+.table a { 
+    color: #2e7af1; /* Brand blue for links */
+    font-weight: 500;
+}
+
+.table .fw-bold {
+    font-weight: 600 !important; /* Slightly bolder name */
+}
+
+/* --- PAGINATION STYLES --- */
+.applications-card .card-footer {
+    background-color: white;
+    border-top: 1px solid #eef3f8;
+    padding: 14px 20px;
+}
+
+.custom-pagination .page-item:first-child .page-link,
+.custom-pagination .page-item:last-child .page-link {
+    border-radius: 6px; /* Slightly rounded arrows */
+    margin: 0 4px;
+}
+
+.custom-pagination .page-link {
+    color: #6d7885; /* Inactive number color */
+    border: 1px solid #eef3f8;
+    background-color: white;
+    font-weight: 500;
+    padding: 6px 10px;
+    min-width: 30px;
+    text-align: center;
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: #2e7af1; /* Active background color */
+    border-color: #2e7af1;
+    color: white;
+    border-radius: 6px; /* Active button uses full rounded style */
+}
+
+.custom-pagination .page-item.active .page-link:hover {
+    background-color: #2e7af1;
+    border-color: #2e7af1;
+}
+
+.custom-pagination .page-item:not(.active) .page-link:hover {
+    background-color: #f5f5f5; /* Light hover background */
+    color: #2e7af1;
+    border-color: #eef3f8;
+}
+
+/* big banner */
+/* --- OVERSEAS LOANS PROMO BANNER --- */
+.promo-banner-loans { 
+    /* Dark Blue Gradient matching image_56593e.png */
+    background: linear-gradient(267.79deg, #00163E 9.08%, #1347A6 88.55%, #226CF5 114.71%);
+    color: #fff; 
+    margin-top: -20px;
+    padding: 30px 40px; /* Increased padding */
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for the lift */
+    border: none;
+    position: relative; /* For dots positioning */
+    max-height: 250px; /* Constrain height */
+
+}
+
+/* Text Styling */
+.promo-banner-loans .banner-service-text {
+    font-size: 1rem;
+    font-weight: 30;
+    opacity: 0.8;
+    color: #eaf2ff;
+    margin-bottom: 5px;
+}
+
+.promo-banner-loans .banner-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.promo-banner-loans .banner-description {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    line-height: 1.5;
+    max-width: 70%; /* Constrain text width */
+}
+
+/* Button Styling (Get Started) */
+.promo-banner-loans .banner-cta {
+    background: #fff;
+    color: #0b49c4; /* Blue text */
+    font-weight: 600;
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: none;
+    transition: background 0.2s;
+}
+
+.promo-banner-loans .banner-cta:hover {
+    background: #f0f0f0;
+}
+
+/* Graphical Figure Styling (The Student Image and surrounding effects) */
+.banner-figure-container {
+    /* Container for the image and pseudo-elements (if needed for graphics) */
+    position: relative;
+    width: 280px; /* Adjust size */
+    height: 100%;
+    margin-right: -15px; /* Pull the image slightly out for effect */
+}
+
+.promo-banner-loans .banner-figure-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits its container */
+}
+
+/* Pagination Dots */
+.banner-dots {
+    /* Positioning the dots at the bottom center, slightly below the content */
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0;
+}
+
+.banner-dots .dot {
+    background-color: rgba(255, 255, 255, 0.4); /* White/muted for inactive */
+}
+
+.banner-dots .dot.active {
+    background-color: white; /* White for active dot */
+}
+
+/* right column */
+.right-col .card { border-radius:12px; box-shadow:var(--shadow); background:var(--card-bg); padding:12px; }
+
+/* misc */
+.profile-mini img { width:40px; height:40px; border-radius:50%; object-fit:cover; }
+.text-white-80 { opacity:0.92; }
+.small { font-size:12px; }
+.muted { color:var(--muted); }
+
+/* responsive */
+@media (max-width: 1199px){
+  .app { grid-template-columns: 240px 1fr; }
+  .top-header .search-bar .form-control { min-width: 280px; }
+}
+@media (max-width: 880px){
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display:none; }
+  .right-col { order: 3; }
+  .main { order: 2; }
+  .top-header .search-bar { display:none; }
+}
+
+.top-header.d-flex.align-items-center {
+    width: 100%;
+    height: 76px;
+    opacity: 1;
+    border-bottom-width: 1px;
+    border-bottom-style: solid; /* add if needed */
+    
+    background: #226CF5;
+
+    box-shadow: 0px 0px 16px 0px #226CF514;
+}
+
+
+.search-bar .input-group-text {
+    padding: 0 10px;
+    background: transparent;
+    border: none;
+}
+
+/* .search-bar .bi-search {
+    font-size: 88px;
+    color: #939393;
+} */
+
+.search-bar .input-group {
+    width: 456px;
+    height: 40px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 3px 15px 0px #0000000D;
+
+    border-radius: 5px;
+    overflow: hidden; /* important: keeps icon inside rounded corners */
+}
+
+.search-bar .input-group-text {
+    background: transparent;
+    border: none;
+    padding-left: 12px;
+    padding-right: 8px;
+}
+
+.search-bar .bi-search {
+    font-size: 16px;
+    color: #939393;
+}
+
+.search-bar .form-control.form-control-sm {
+    border: none;
+    box-shadow: none;
+    padding: 8px 15px;
+    font-size: 14px;
+}
+
+.search-bar .form-control::placeholder {
+    font-family: "DM Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    letter-spacing: 0;
+
+    color: #939393;   /* your background color becomes placeholder text color */
+    opacity: 1;       /* ensures full visibility */
+}
+
+.brand-title{
+    margin-left: 80px;
+    margin-right: 140px;
+}
+
+.custom-nav {
+  width: 232px;
+  height: 44px;
+  opacity: 1;
+  border-radius: 4px;
+  padding: 10px 16px;
+  background-color: #226CF5 !important; /* force background */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff !important; /* text color */
+  text-decoration: none; /* remove underline */
+}
+
+/* Container Background (Optional - matching the image color) */
+.navbar-custom {
+    background-color: #1c75f6;
+    padding: 15px 20px;
+}
+
+/* --- What's New Link Styling --- */
+.whats-new-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.3s;
+}
+
+.whats-new-link:hover {
+    color: #e6e6e6;
+}
+
+.whats-new-text {
+    font-size: 1rem;
+    border-bottom: 2px solid white; /* The underline effect */
+    line-height: 1.2;
+}
+
+.icon-mega {
+    font-size: 1.5rem;
+    transform: rotate(-15deg); /* Tilted megaphone */
+}
+
+/* --- Notification Box Styling --- */
+.notification-box {
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.25); /* Glass border */
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.notification-box:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notification-badge {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    background-color: #ff2b42;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #1c75f6; /* Matches bg to create cutout look */
+}
+
+/* 1. Card Container Styling */
+.filter-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners for the container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* 2. Input Group and Select Styling */
+/* Makes the select look integrated with the icon */
+.input-group-text {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-right: none;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem 0 0 0.375rem;
+    color: #8F9297; /* Icon color */
+}
+
+.custom-select-icon {
+    border-left: none;
+}
+
+/* Adjustments to make Bootstrap form selects match the design's height/style */
+.form-select {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* Ensure the select border is rounded only on the right side */
+.input-group > .form-select {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+/* 3. Apply Filters Button Styling */
+/* 3. Apply Filters Button Styling (CORRECTED to match the white background/blue border design) */
+.apply-filters-btn {
+    background-color: white; /* Changed to white/transparent background */
+    border: 1px solid #2e7af1; /* Blue border */
+    color: #2e7af1; /* Blue text color */
+    
+    /* Keep existing size and font styles */
+    font-weight: 500; 
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+/* Optional: Add a hover effect */
+.apply-filters-btn:hover {
+    background-color: #f2f7ff; /* Slight light blue hover background */
+    border-color: #2e7af1;
+    color: #2e7af1;
+}
+
+.apply-filters-btn:hover {
+    border-color: #1e64d2;
+}
+
+/* Ensure consistent spacing between the two rows */
+.filter-card .row.mt-3 {
+    margin-top: 1.5rem !important; /* Increase spacing between rows */
+}
+
+/* 1. Set the default color for all select text */
+.form-select {
+    color: #8F9297; /* Default active text color (dark gray) */
+}
+
+/* 2. Target the placeholder text within the select box */
+.form-select option[value=""]:first-child {
+    /* Targets the first option which we assume is the placeholder */
+    color: #8F9297; /* Your specified placeholder color */
+}
+
+/* Fallback/Generic styling for the select box placeholder state */
+.form-select:focus:invalid, 
+.form-select:not(:focus):invalid {
+    color: #8F9297; 
+}
+
+
+/* 3. Set the color for the icons in the input-group */
+.input-group-text {
+    /* Use the specified color for the icons themselves */
+    color: #8F9297;
+    background-color: white;
+    border: 1px solid #dee2e6;
+    border-right: none;
+    /* ... other existing styles ... */
+}
+
+/* Re-setting the icon color on hover/focus (optional, but good practice) */
+.input-group:focus-within .input-group-text {
+    color: #495057; /* Darker color on focus/activity */
+}
+
+.news-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow for lift */
+    padding: 15px;
+    max-width: 350px; /* Constrain width for sidebar use, adjust as needed */
+    font-family: Arial, sans-serif;
+}
+
+/* --- HEADER STYLES --- */
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0; /* Slight separator line */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header-flex strong {
+    font-size: 1rem;
+    color: #333; /* Darker text */
+}
+
+.three-dots-icon {
+    font-size: 1.2rem;
+    color: #888;
+    cursor: pointer;
+}
+
+/* --- NEWS ITEM BODY (Icon and Text) --- */
+.news-item-body {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.news-icon-wrapper {
+    /* The large, light gray circle */
+    background-color: #eef4ff; /* Light blue/gray background */
+    border: 1px solid #c9d7ef;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0; /* Prevents shrinking */
+    margin-top: 5px; /* Alignment with text */
+}
+
+.news-icon-wrapper i {
+    color: #4a86f8; /* Theme color for the icon */
+    font-size: 1.2rem;
+}
+
+.news-text-content {
+    flex-grow: 1;
+}
+
+.news-headline {
+    font-size: 1rem;
+    font-weight: 600; /* Bolder headline */
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.3;
+}
+
+.news-excerpt {
+    font-size: 0.9rem;
+    color: #666; /* Muted text color for the excerpt */
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+.read-more-link {
+    color: #4a86f8; /* Theme color for the link */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* --- PAGINATION DOTS --- */
+.pagination-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #d1d1d1; /* Inactive dot color */
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: #4a86f8; /* Active dot color */
+}
+
+/* --- TAB STYLES (CORRECTED FINAL VERSION) --- */
+.card-tabs {
+    padding: 0 20px;
+    margin-top: 10px;
+    border-bottom: 1px solid #eef3f8;
+}
+
+.tab-item {
+    padding: 10px 15px;
+    margin-bottom: -1px; 
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #6d7885; /* Inactive color (Grey) */
+    border-bottom: 3px solid transparent; 
+    transition: all 0.2s;
+    background-color: transparent; 
+}
+
+/* Hover Effect for ALL Tabs (Inactive) */
+.tab-item:hover {
+    color: #2e7af1; 
+    background-color: #f6faff; /* Light bluish hover block background */
+    border-bottom-color: transparent; /* Keep border transparent for inactive tabs */
+}
+
+/* Styling for the actively selected tab (Base State: Blue Text/Underline, Transparent Background) */
+.tab-item.active {
+    color: #2e7af1; 
+    border-bottom: 3px solid #2e7af1; /* Thicker blue underline */
+    font-weight: 600; 
+    background-color: transparent; 
+}
+
+/* ---------------------------------------------------- */
+/* FINAL FIX: Force the bluish background on the active tab when hovered or focused */
+.tab-item.active:hover,
+.tab-item.active:focus {
+    background-color: #f6faff !important; /* FORCED LIGHT BLUE BACKGROUND on hover/focus */
+    color: #2e7af1 !important; /* FORCED BLUE TEXT on hover/focus */
+    /* The blue underline from .tab-item.active is preserved */
+}
+
+.bannerLoan{
+    margin-top: -20px;
+}
+
+.cardNews{
+margin-top: 10px;
+}
+
+.btn-sm2{
+    margin-left: 15px;
+}
+
+/* --- UPCOMING EVENTS CARD STYLES --- */
+.event-card {
+    padding: 18px !important; /* Adjust padding for the specific card */
+}
+
+/* Event Header and Navigation */
+.event-header strong {
+    font-weight: 600;
+    color: #253046;
+}
+
+.event-nav-btn {
+    background-color: white;
+    border: 1px solid #eef3f8;
+    color: #6d7885;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border-radius: 8px; /* Slightly rounded corners */
+}
+
+.event-nav-btn:hover:not(:disabled) {
+    background-color: #f6f6f6;
+    border-color: #ddd;
+    color: #253046;
+}
+
+/* Event Image */
+.event-img {
+    border-radius: 8px !important; /* Ensure image is rounded */
+    object-fit: cover;
+    height: 180px; /* Give it a set height */
+}
+
+/* Event Title and Date */
+.event-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #253046;
+}
+
+.event-date {
+    font-size: 0.75rem;
+    color: #6d7885;
+    font-weight: 400;
+}
+
+/* Event Time Box (4:30 PM) */
+.event-time-box {
+    background-color: #f7f9fb;
+    color: #253046;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 1;
+}
+
+.event-time-box .small {
+    font-size: 0.75rem;
+    font-weight: 10;
+    margin-top: -2px;
+    line-height: 1;
+}
+
+/* University and Host Info Rows */
+.event-info-row {
+    font-size: 0.75rem;
+    color: #6d7885;
+    display: flex;
+    align-items: center;
+}
+
+.event-info-row i {
+    font-size: 0.75rem;
+    color: #6d7885;
+}
+
+/* Register Button */
+.event-register-btn {
+    background-color: #2e7af1;
+    border-color: #2e7af1;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+/* --- QUICK LINKS CARD STYLES --- */
+.quicklinks-card {
+    /* Base card styles are already handled by the general .card, but we can refine padding/shadow */
+    padding: 18px !important;
+}
+
+.quicklinks-title {
+    font-weight: 600;
+    color: #253046;
+    display: block; /* Ensure it takes full width above links */
+    margin-bottom: 12px;
+}
+
+.quick-link-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spacing between the link items */
+}
+
+.quick-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    /* The individual card/box style for each link */
+    background-color: white;
+    border: 1px solid #eef3f8;
+    border-radius: 8px;
+    padding: 10px 15px;
+    
+    text-decoration: none; /* Remove default link underline */
+    font-size: 14px;
+    font-weight: 500;
+    color: #2e7af1; /* Blue link text color */
+    
+    transition: all 0.2s ease-in-out;
+}
+
+.quick-link-item:hover {
+    background-color: #f6faff; /* Light blue hover background */
+    border-color: #c9e0ff; /* Subtle blue border on hover */
+    box-shadow: 0 2px 5px rgba(46, 122, 241, 0.1);
+}
+
+.quick-link-item i {
+    /* External link icon styling */
+    color: #2e7af1;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+/* --- CONTACT REGIONAL MANAGER STYLES --- */
+.contact-manager-card {
+    padding: 18px !important; 
+}
+
+.contact-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #253046;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Spacing between contact boxes */
+}
+
+.contact-item-box {
+    /* The individual white box style */
+    background-color: white;
+    border: 1px solid #eef3f8;
+    border-radius: 8px;
+    padding: 15px;
+    transition: box-shadow 0.2s;
+}
+
+.contact-item-box:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle lift on hover */
+}
+
+/* Avatar Styling */
+.contact-avatar {
+    width: 44px;
+    height: 44px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+/* Name and Info Row */
+.contact-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #2e7af1; /* Blue name color */
+    line-height: 1.2;
+    margin-bottom: 2px;
+}
+
+.contact-info-row {
+    font-size: 0.85rem;
+    color: #4e5d71; /* Darker muted text for phone/location */
+    font-weight: 500;
+}
+
+.contact-info-row .divider {
+    margin: 0 5px;
+    color: #ccc;
+    font-weight: 400;
+}
+
+/* Email Styling */
+.contact-email {
+    font-size: 0.8rem;
+    color: #6d7885;
+    text-align: center;
+    padding-top: 8px;
+    margin-top: 8px;
+    border-top: 1px solid #eef3f8; /* Light separator line above email */
+    word-break: break-word; /* Ensure long emails wrap */
+}
